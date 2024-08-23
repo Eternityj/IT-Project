@@ -4,7 +4,10 @@ This is a service project designed to assist visually impaired individuals by en
 
 ## Features and Functionality
 
-- 
+- **Text_Recognition Module:**
+  - Captures an image using the system's camera, processes it to grayscale, and extracts text using Tesseract OCR.
+  - This functionality allows the NAO robot to recognize and read aloud printed text for visually impaired individuals.
+
 
 
 
