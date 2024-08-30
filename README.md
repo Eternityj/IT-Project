@@ -46,7 +46,7 @@ Ensure that you have the following installed on your system:
 4.**Install OpenCV**:brew install opencv@2
 5. **Install NAOqi SDK**
 
-### Window 
+
 ### Windows
 
 1. **Install Python 2.7:**  
