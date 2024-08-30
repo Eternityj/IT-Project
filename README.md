@@ -4,7 +4,10 @@ This is a service project designed to assist visually impaired individuals by en
 
 ## Features and Functionality
 
-- **Laptop Folder:** 
+## Functionality
+
+### Laptop Folder
+
 This project leverages the laptop's built-in camera to perform various tasks, including:
 
 - **OCR (Optical Character Recognition):** Capture images and extract text using OCR technology.
@@ -12,8 +15,10 @@ This project leverages the laptop's built-in camera to perform various tasks, in
 - **Music Playback:** Integrate with a music player to play background music while reading or during other activities.
 - **Emotion-based Reading:** Enhance the reading experience by modulating the voice based on the emotional content of the text.
 
-- **Music :**
-Music list.
+### Music
+
+This section contains a curated list of music that can be played during various activities.
+
 
 ## Installation and Setup
 
