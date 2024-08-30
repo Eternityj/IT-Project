@@ -3,28 +3,27 @@
 This is a service project designed to assist visually impaired individuals by enabling a NAO robot to read books aloud. The project uses a camera to capture text, converts the text to speech, and integrates with an intelligent AI API to enable interactive Q&A.
 
 ## Features and Functionality
-
-## Functionality
-
 ### Laptop Folder
 
-This project leverages the laptop's built-in camera to perform various tasks, including:
+This folder contains code and resources for leveraging the laptop's built-in camera to perform various tasks, including:
 
 - **OCR (Optical Character Recognition):** Capture images and extract text using OCR technology.
 - **Reading Aloud:** Read the extracted text aloud, simulating a natural reading experience.
 - **Music Playback:** Integrate with a music player to play background music while reading or during other activities.
 - **Emotion-based Reading:** Enhance the reading experience by modulating the voice based on the emotional content of the text.
 
-### Music
+### Music Folder
 
-This section contains a curated list of music that can be played during various activities.
+This folder contains a curated list of music tracks that can be played during various activities to enhance the user experience.
 
-### NLTK Data
+### NLTK Data Folder
 
-Use NLTK data as a training dataset for natural language processing tasks, including sentiment analysis and text classification, to enhance the emotion-based reading functionality.
+This folder includes the NLTK data used as a training dataset for natural language processing tasks. It supports sentiment analysis and text classification, which are used to enhance the emotion-based reading functionality in the project.
 
-### Robot
-This project also utilizes the NAO robot's camera to perform similar tasks, such as capturing images for OCR, enhancing the interaction by leveraging the robot's capabilities for reading aloud and interacting with the user.
+### Robot Folder
+
+This folder contains code and resources for utilizing the NAO robot's camera to perform similar tasks as the laptop, such as capturing images for OCR. It also includes functionalities that leverage the robot's capabilities for reading aloud and interacting with users, making the interaction more engaging.
+
 
 
 ### Prerequisites
