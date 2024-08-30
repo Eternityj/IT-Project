@@ -4,12 +4,16 @@ This is a service project designed to assist visually impaired individuals by en
 
 ## Features and Functionality
 
-- **Text_Recognition Module:**
-  - Captures an image using the system's camera, processes it to grayscale, and extracts text using Tesseract OCR.
-  - This functionality allows the NAO robot to recognize and read aloud printed text for visually impaired individuals.
+- **Laptop Folder:** 
+This project leverages the laptop's built-in camera to perform various tasks, including:
 
+- **OCR (Optical Character Recognition):** Capture images and extract text using OCR technology.
+- **Reading Aloud:** Read the extracted text aloud, simulating a natural reading experience.
+- **Music Playback:** Integrate with a music player to play background music while reading or during other activities.
+- **Emotion-based Reading:** Enhance the reading experience by modulating the voice based on the emotional content of the text.
 
-
+- **Music :**
+Music list.
 
 ## Installation and Setup
 
