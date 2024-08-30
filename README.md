@@ -23,6 +23,8 @@ This section contains a curated list of music that can be played during various 
 
 Use NLTK data as a training dataset for natural language processing tasks, including sentiment analysis and text classification, to enhance the emotion-based reading functionality.
 
+### Robot
+This project also utilizes the NAO robot's camera to perform similar tasks, such as capturing images for OCR, enhancing the interaction by leveraging the robot's capabilities for reading aloud and interacting with the user.
 
 
 ### Prerequisites
