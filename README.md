@@ -19,8 +19,10 @@ This project leverages the laptop's built-in camera to perform various tasks, in
 
 This section contains a curated list of music that can be played during various activities.
 
+### NLTK Data
 
-## Installation and Setup
+Use NLTK data as a training dataset for natural language processing tasks, including sentiment analysis and text classification, to enhance the emotion-based reading functionality.
+
 
 
 ### Prerequisites
