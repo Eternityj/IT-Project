@@ -1,6 +1,5 @@
 from textblob import TextBlob
 
-
 def analyze_sentiment(text):
     if not isinstance(text, unicode):
         text = text.decode('utf-8')
@@ -38,4 +37,3 @@ def emotion_read(text):
         volume = -20
 
     return rate, volume
-

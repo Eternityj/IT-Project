@@ -1,7 +1,7 @@
 from camera_module import *
+from voice_module import *
 from music_module import *
 from read_module import *
-from voice_module import *
 import threading
 from naoqi import ALProxy
 
@@ -13,6 +13,7 @@ def main():
     global is_paused
     state = "off"
 
+    # Should I add a function that keeps waiting for input when it automatically exits if it is typed incorrectly
     command = raw_input().strip().lower()
     if command == "hi, readmate":
         recognized_text = capture_and_recognize_text()
@@ -29,20 +30,19 @@ def main():
                 recognized_text = recognized_text.encode('utf-8')
                 # print text and transfer text to nao
                 print("Text: ", recognized_text) # Test need (need delete)
-                read_text(recognized_text)
+                start_reading(recognized_text)
                 # for nao robot
                 tts.say(recognized_text)
             else:
                 print("No text recognized.") # Test need (need delete)
                 tts.say("I could not recognize any text.")
-        elif command == "readmate, pause":
-            # Pause not supported
+        elif command == "readmate, pause reading":
             print("Pausing...")
-            is_paused = True
-        elif command == "readmate, continue":
-            # Continue not supported
+            pause_reading()
+        elif command == "readmate, continue reading":
             print("Continuing...")
-            is_paused = False
+            continue_reading(recognized_text)
+        # stop not supported
         elif command == "readmate, stop read":
             stop_reading()
         elif command == "readmate, play music":
@@ -54,17 +54,18 @@ def main():
             change_volume(10)
         elif command == "readmate, decrease the volume":
             change_volume(-10)
-        # can not use
+        # not supported
         elif command == "readmate, increase the rate":
             change_rate(20)
-        # can not use
+        # not supported
         elif command == "readmate, decrease the rate":
             change_rate(-20)
         elif command == "bye, readmate":
+            # not supported stop reading
+            # stop_reading()
             stop_music()
-            stop_reading()
             print("Exiting program.")
-            break
+            exit()
         else:
             print("Unknown command, please try again.")
             tts.say("Unknown command, please try again.")

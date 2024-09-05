@@ -1,25 +1,67 @@
-def handle_Speech(command):
+from Voice_module import *
+from Camera_module import *
+from music_module import *
+from Read_module import *
+from naoqi import ALProxy
+
+NAO_IP = "127.0.0.1"
+NAO_PORT = 9559
+
+tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
+memory = ALProxy("ALMemory", NAO_IP, NAO_PORT)
+speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
+video_device = ALProxy("ALVideoDevice", NAO_IP, NAO_PORT)
+
+def on_word_recognized(value):
     global is_paused
-    if command == "readmate, start read":
-        recognized_text = capture_and_recognize_text()
-        if recognized_text:
-            read_text(recognized_text)
+
+    word = value[0]  # Recognized word
+    confidence = value[1]  # Confidence level of the recognized word
+
+    if confidence > 0.5:  # Check if the confidence level is acceptable
+        if word == "hi, readmate":
+            recognized_text = capture_image()
+            tts.say("I am here, how can i help you?")
+            if word == "readmate, start read":
+                if recognized_text:
+                    recognized_text = recognized_text.encode('utf-8')
+                    read_text(recognized_text)
+                else:
+                    tts.say("I could not recognize any text.")
+            elif word == "readmate, pause reading":
+                pause_reading()
+            elif word == "readmate, continue reading":
+                continue_reading()
+            # stop not supported
+            elif word == "readmate, stop reading":
+                stop_reading()
+            elif word == "readmate, play music":
+                play_music()
+            elif word == "readmate, stop music":
+                stop_music()
+            elif word == "readmate, increase volume":
+                change_volume(10)
+            elif word == "readmate, decrease volume":
+                change_volume(-10)
+            elif word.lower() in ["english", "french", "chinese"]:
+                change_language(word)
+            elif word == "bye readmate":
+                stop_music()
+                stop_reading()
+                tts.say("Goodbye!")
+                exit()
+            else:
+                tts.say("Unknown command, please try again.")
         else:
-            tts.say("I could not recognize any text.")
-    elif command == "readmate, stop read":
-        stop_reading()
-    elif command == "readmate, increase the volume":
-        change_volume(10)
-    elif command == "readmate, decrease the volume":
-        change_volume(-10)
-    elif command == "readmate, increase the rate":
-        change_rate(20)
-    elif command == "readmate, decrease the rate":
-        change_rate(-20)
-    elif command == "bye, readmate":
-        stop_reading()
-        print("Exiting program.")
-        tts.say("Goodbye!")
-    else:
-        print("Unknown command, please try again.")
-        tts.say("Unknown command, please try again.")
+            tts.say("please say hi, readmate")
+def start_recognition():
+    speech_recognition.setLanguage("English")
+    vocabulary = ["hi, readmate", "readmate, start read", "readmate, pause reading", "readmate, continue reading",
+                  "readmate, stop reading","readmate, play music", "readmate, stop music", "readmate, increase volume",
+                  "readmate, decrease volume", "bye readmate", "english", "french", "chinese"]
+    speech_recognition.setVocabulary(vocabulary, False)
+    speech_recognition.subscribe("Test_ASR")
+    memory.subscribeToEvent("WordRecognized", "python", "on_word_recognized_event")
+
+def on_word_recognized_event(event_name, value, subscriber_identifier):
+    on_word_recognized(value)
