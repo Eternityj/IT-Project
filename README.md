@@ -3,15 +3,27 @@
 This is a service project designed to assist visually impaired individuals by enabling a NAO robot to read books aloud. The project uses a camera to capture text, converts the text to speech, and integrates with an intelligent AI API to enable interactive Q&A.
 
 ## Features and Functionality
+### Laptop Folder
 
-- **Text_Recognition Module:**
-  - Captures an image using the system's camera, processes it to grayscale, and extracts text using Tesseract OCR.
-  - This functionality allows the NAO robot to recognize and read aloud printed text for visually impaired individuals.
+This folder contains code and resources for leveraging the laptop's built-in camera to perform various tasks, including:
 
+- **OCR (Optical Character Recognition):** Capture images and extract text using OCR technology.
+- **Reading Aloud:** Read the extracted text aloud, simulating a natural reading experience.
+- **Music Playback:** Integrate with a music player to play background music while reading or during other activities.
+- **Emotion-based Reading:** Enhance the reading experience by modulating the voice based on the emotional content of the text.
 
+### Music Folder
 
+This folder contains a curated list of music tracks that can be played during various activities to enhance the user experience.
 
-## Installation and Setup
+### NLTK Data Folder
+
+This folder includes the NLTK data used as a training dataset for natural language processing tasks. It supports sentiment analysis and text classification, which are used to enhance the emotion-based reading functionality in the project.
+
+### Robot Folder
+
+This folder contains code and resources for utilizing the NAO robot's camera to perform similar tasks as the laptop, such as capturing images for OCR. It also includes functionalities that leverage the robot's capabilities for reading aloud and interacting with users, making the interaction more engaging.
+
 
 
 ### Prerequisites
@@ -34,7 +46,7 @@ Ensure that you have the following installed on your system:
 4.**Install OpenCV**:brew install opencv@2
 5. **Install NAOqi SDK**
 
-### Window 
+
 ### Windows
 
 1. **Install Python 2.7:**  
