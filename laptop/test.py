@@ -1,6 +1,6 @@
 from read_module import *
 from voice_module import *
-from gpt_api import ask_gpt_with_current_page
+from gpt import *
 
 
 current_volume = 50
@@ -24,6 +24,11 @@ def main():
             continue_reading(text)
         elif command == "stop":
             stop_reading()
+        elif command == "ask gpt":
+            text = "Long ago, there was a big cat in the house. He caught many mice while they were stealing food.One day the mice had a meeting to talk about the way to deal with their common enemy. Some said this, and some said that.At last a young mouse got up, and said that he had a good idea.We could tie a bell around the neck of the cat. Then when he comes near, we can hear the sound of the bell, and run away.Everyone approved of this proposal, but an old wise mouse got up and said, That is all very well, but who will tie the bell to the cat? The mice looked at each other, but nobody spoke."
+            user_question = raw_input("Ask your question: ").strip()
+            answer = ask_gpt_with_current_page(text, user_question)
+            print(answer)
         elif command == "bye, readmate":
             # stop_reading()
             print("Exiting program.")

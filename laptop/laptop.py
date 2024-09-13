@@ -2,6 +2,7 @@ from camera_module import *
 from voice_module import *
 from music_module import *
 from read_module import *
+from gpt import *
 import threading
 from naoqi import ALProxy
 
@@ -60,6 +61,14 @@ def main():
         # not supported
         elif command == "readmate, decrease the rate":
             change_rate(-20)
+        elif command == "ask gpt":
+            if recognized_text:
+                user_question = raw_input("Ask your question: ").strip()
+                answer = ask_gpt_with_current_page(recognized_text, user_question)
+                tts.say(answer)
+                print("GPT Answer:", answer)
+            else:
+                tts.say("No text available for GPT to analyze.")
         elif command == "bye, readmate":
             # not supported stop reading
             # stop_reading()

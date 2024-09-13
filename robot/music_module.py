@@ -5,7 +5,7 @@ from naoqi import ALProxy
 #import wave
 #import contextlib
 
-NAO_IP = "127.0.0.1"
+NAO_IP = "192.168.1.108"
 NAO_PORT = 9559
 
 tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
