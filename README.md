@@ -1,4 +1,4 @@
-# Team 97
+# Team 97-ReadMate
 
 This is a service project designed to assist visually impaired individuals by enabling a NAO robot to read books aloud. The project uses a camera to capture text, converts the text to speech, and integrates with an intelligent AI API to enable interactive Q&A.
 
