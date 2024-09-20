@@ -6,7 +6,7 @@ This is a service project designed to assist visually impaired individuals by en
 
 ## Features and Functionality
 ### Functionality Summary
-- **Captures images and performs OCR** using NAO robot’s camera (`camera_module.py`)
+- **Captures images and performs OCR** using both NAO robot and laptop's camera (`camera_module.py`)
 - **Interacts with the NAO robot using voice commands** (`interactive_module.pyd`)
 - **Switches languages** for speech recognition and TTS (`language_module.py`)
 - **Reads text with emotion-based adjustments** using the NAO robot (`read_module.py`)
