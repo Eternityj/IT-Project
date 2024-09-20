@@ -2,7 +2,22 @@
 
 This is a service project designed to assist visually impaired individuals by enabling a NAO robot to read books aloud. The project uses a camera to capture text, converts the text to speech, and integrates with an intelligent AI API to enable interactive Q&A.
 
+
+
 ## Features and Functionality
+### Functionality Summary
+- **Captures images and performs OCR** using NAO robot’s camera (`camera_module.py`)
+- **Interacts with the NAO robot using voice commands** (`interactive_module.pyd`)
+- **Switches languages** for speech recognition and TTS (`language_module.py`)
+- **Reads text with emotion-based adjustments** using the NAO robot (`read_module.py`)
+- **Manages NAO robot’s volume and reading speed** (`voice_module.py`)
+- **Performs sentiment analysis on text and adjusts speech rate and volume** (`emotion_module.py`)
+- **Answers questions about text using GPT API** (`gpt.py`)
+- **Facilitates voice-based interactions with the NAO robot** (`interactive_module.py`, `interactive_module1.py`)
+- **Plays and stops music** on the NAO robot (`music.py`)
+- **Reads text with tracking and emotional modulation** (`read_module.py`)
+
+
 ### Laptop Folder
 
 This folder contains code and resources for leveraging the laptop's built-in camera to perform various tasks, including:
