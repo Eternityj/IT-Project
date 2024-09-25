@@ -2,6 +2,7 @@ from voice_module import *
 from camera_module import *
 from music_module import *
 from read_module import *
+from flip_page_module import *
 from naoqi import ALProxy
 
 
@@ -34,6 +35,8 @@ def on_word_recognized(value):
                     read_text(recognized_text)
                 else:
                     tts.say("I could not recognize any text.")
+            elif word == "readmate, next page":
+                flip_page()
             elif word == "readmate, pause reading":
                 pause_reading()
             elif word == "readmate, continue reading":

@@ -18,7 +18,6 @@ def read_text(text):
 
     sentences = nltk.sent_tokenize(text)
     current_volume = get_current_volume()
-    print(current_volume)
 
     while current_position < len(sentences):
         if is_paused:
@@ -41,6 +40,7 @@ def read_text(text):
         current_position += 1  # Move to the next sentence
 
     if current_position == len(sentences):
+        print("The current page has been read")
         current_position = 0
 
 def start_reading(text):

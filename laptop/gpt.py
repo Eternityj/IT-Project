@@ -10,12 +10,12 @@ def ask_gpt_with_current_page(book_content, user_question):
         }
 
         data = {
-            "model": "gpt-3.5-turbo",  # Update to a supported model
+            "model": "gpt-4",  # Update to a supported model
             "messages": [
-                {"role": "system", "content": "You are a helpful assistant with deep knowledge about books."},
-                {"role": "user", "content": "Here is an excerpt from a book: {}. Now answer this question: {}".format(book_content, user_question)}
-            ],
-            "max_tokens": 150
+                {"role": "system", "content": "You are a helpful assistant with deep knowledge."},
+                {"role": "user", "content": "{}. Now answer this question: {}".format(book_content, user_question)}
+        ],
+            "max_tokens": 200
         }
 
         response = requests.post('https://api.openai.com/v1/chat/completions', headers=headers, json=data)

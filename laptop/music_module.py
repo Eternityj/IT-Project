@@ -25,7 +25,7 @@ def play_music():
 
     if not music_files:
         print("No music files found in the folder.")
-        tts.say("I could not find any music files.")
+        # tts.say("I could not find any music files.")
         return
 
     # Choose a music file at random

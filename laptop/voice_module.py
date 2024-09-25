@@ -17,4 +17,3 @@ def change_rate(change):
     global read_rate
 
     read_rate = max(0, min(260, read_rate + change))  # Limit reading speeds between 100 and 350 WPM
-    print(read_rate)

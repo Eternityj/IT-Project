@@ -2,8 +2,6 @@ import time
 import random
 import os
 from naoqi import ALProxy
-#import wave
-#import contextlib
 
 NAO_IP = "192.168.1.108"
 NAO_PORT = 9559

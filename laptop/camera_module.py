@@ -30,9 +30,9 @@ def capture_and_recognize_text():
     # Display image
     # wait press key close window
     # Test need (need delete)
-    cv2.imshow('Captured Image', frame)
-    cv2.waitKey(0) # Conflict with the start function
-    cv2.destroyAllWindows()
+    # cv2.imshow('Captured Image', frame)
+    # cv2.waitKey(0) # Conflict with the start function
+    # cv2.destroyAllWindows()
 
     # Transformed gray scale
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
