@@ -49,6 +49,7 @@ This folder includes the NLTK data used as a training dataset for natural langua
 - **interactive_module1.py:** Similar to `interactive_module.py`, this file enables voice interactions with the NAO robot using speech recognition. It handles commands like reading, playing/stopping music, adjusting volume, changing language, and asking questions about text using GPT. It processes user commands and responds accordingly, using text recognition and other modules for dynamic interaction.
 - **music.py:** Handles playing and stopping music on the NAO robot. It randomly selects music files from a specified folder and plays them using the NAO robot’s ALAudioPlayer. The module also includes functionality to stop currently playing music and an optional feature to play music every hour.
 - **read_module.py:** Responsible for reading text aloud using the NAO robot. The text is broken into sentences using `nltk`, and each sentence is read with dynamic volume and speech rate adjustments based on its emotional content. The module allows for pausing and resuming reading, while keeping track of the current position in the text.
+- **flip_page_module.py:** Captures images from NAO robot's camera, detects the page's position using OpenCV, and simulates flipping the page using the robot's arm. The robot's arm moves to the page, grabs it, flips it, and returns to its initial position.
 
 
 
