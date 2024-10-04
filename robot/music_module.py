@@ -1,12 +1,14 @@
 import time
 import random
 import os
+
 from naoqi import ALProxy
 
-NAO_IP = "192.168.1.108"
+NAO_IP = "192.168.1.112"
 NAO_PORT = 9559
 
 tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
+
 def play_music():
     # Specify the music folder path
     music_folder = "/Users/yangjiesen/PycharmProjects/readmate/music"

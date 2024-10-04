@@ -3,7 +3,7 @@ import numpy as np
 import pytesseract
 from naoqi import ALProxy
 
-NAO_IP = "192.168.1.108"
+NAO_IP = "192.168.1.112"
 NAO_PORT = 9559
 
 video_device = ALProxy("ALVideoDevice", NAO_IP, NAO_PORT)

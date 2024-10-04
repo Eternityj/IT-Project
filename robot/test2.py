@@ -1,17 +1,16 @@
+import string
+import re
 import sys
 
 from naoqi import ALProxy, ALModule, ALBroker
 from voice_module import *
-from camera_module import *
-from music_module import *
-from read_module import *
 from gpt import *
 
-NAO_IP = "192.168.1.112"
+NAO_IP = "127.0.0.1"
 NAO_PORT = 9559
 
 tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
-speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
+# speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
 memory = ALProxy("ALMemory", NAO_IP, NAO_PORT)
 
 broker = ALBroker("myBroker", "0.0.0.0", 0, NAO_IP, NAO_PORT)
@@ -23,10 +22,14 @@ class InteractiveModule(ALModule):
         ALModule.__init__(self, name)
         self.memory = ALProxy("ALMemory", NAO_IP, NAO_PORT)
         self.tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
-        self.speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
+        # self.speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
 
 
-        self.start_recognition()
+        # self.start_recognition()
+
+    def manual_trigger(self, word):
+        print("Manually triggering word recognized event with: {word}")
+        self.on_word_recognized_event("WordRecognized", [word, 1.0], None)
 
     def start_recognition(self):
         print("Starting speech recognition...")
@@ -60,27 +63,16 @@ class InteractiveModule(ALModule):
                 if word == "hi, read mate":
                     tts.say("I am here, how can I help you?")
                 elif word == "read mate, start read":
-                    recognized_text = capture_image()
+                    recognized_text = "Long ago, there was a big cat in the house. He caught many mice while they were stealing food. One day the mice had a meeting to talk about the way to deal with their common enemy. Some said this, and some said that. At last a young mouse got up, and said that he had a good idea. We could tie a bell around the neck of the cat. Then when he comes near, we can hear the sound of the bell, and run away. Everyone approved of this proposal, but an old wise mouse got up and said, That is all very well, but who will tie the bell to the cat? The mice looked at each other, but nobody spoke."
                     if not recognized_text:
                         tts.say("I could not recognize any text.")
                     else:
                         recognized_text = recognized_text.encode('utf-8')
                         text = recognized_text
-                        read_text(recognized_text)
-                elif word == "read mate, pause reading":
-                    pause_reading()
-                elif word == "read mate, continue reading":
-                    continue_reading()
-                elif word == "read mate, play music":
-                    play_music()
-                elif word == "read mate, stop music":
-                    stop_music()
                 elif word == "read mate, increase volume":
                     change_volume(10)
                 elif word == "read mate, decrease volume":
                     change_volume(-10)
-                elif word.lower() in ["english", "french", "chinese"]:
-                    change_language(word)
                 elif word.startswith("read mate, ask"):
                     question = word[len("read mate, ask "):]
                     answer = ask_gpt_with_current_page(text, question)
@@ -93,15 +85,17 @@ class InteractiveModule(ALModule):
                         tts.say("Sorry, I could not find an answer.")
                     tts.say("Here is the answer: " + answer)
                 elif word == "bye read mate":
-                    stop_music()
+                    tts.say("Goodbye!")
                     broker.shutdown()
                     sys.exit()
-                    tts.say("Goodbye!")
                 else:
                     tts.say("Unknown command, please try again.")
 
-def start_read():
+if __name__ == "__main__":
     interactive_module = InteractiveModule("interactive_module")
+    interactive_module.manual_trigger("read mate, start read")
+    interactive_module.manual_trigger("read mate, ask What is the moral of the story?")
+    interactive_module.manual_trigger("bye read mate")
 
     try:
         while True:

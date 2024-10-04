@@ -1,8 +1,10 @@
-from camera_module import *
 from read_module import *
 from naoqi import ALProxy
+from music_module import *
+from flip_page_module import *
+from interactive_module import *
 
-NAO_IP = "192.168.1.108"
+NAO_IP = "192.168.1.112"
 NAO_PORT = 9559
 
 tts = ALProxy("ALTextToSpeech", NAO_IP, NAO_PORT)
@@ -11,12 +13,9 @@ speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
 video_device = ALProxy("ALVideoDevice", NAO_IP, NAO_PORT)
 
 def main():
-    # text = capture_image()
-    # recognized_text = text.encode('utf-8')
-    text= "hello read mate"
-    read_text(text)
-    if speech_recognition.getActiveLanguage() is not None:
-        speech_recognition.stopProcessing()
+    start_read()
+    # flip_page()
 
 if __name__ == "__main__":
     main()
+
