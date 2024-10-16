@@ -6,7 +6,7 @@ from naoqi import ALProxy
 import nltk
 
 
-NAO_IP = "192.168.1.112"
+NAO_IP = "127.0.0.1"
 NAO_PORT = 9559
 
 custom_data_path = '/Users/yangjiesen/PycharmProjects/readmate/nltk_data'

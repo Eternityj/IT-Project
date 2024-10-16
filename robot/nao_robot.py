@@ -1,11 +1,14 @@
 from interactive_module import *
 
-NAO_IP = "192.168.1.112"
+NAO_IP = "127.0.0.1"
 NAO_PORT = 9559
 
-def main():
-    start_read()
-
 if __name__ == "__main__":
-    main()
+    interactive_module = InteractiveModule("interactive_module")
+
+    try:
+        while True:
+            pass
+    except KeyboardInterrupt:
+        broker.shutdown()
 
