@@ -9,13 +9,12 @@ memory = ALProxy("ALMemory", NAO_IP, NAO_PORT)
 speech_recognition = ALProxy("ALSpeechRecognition", NAO_IP, NAO_PORT)
 
 def change_language(language):
+    # Find supported languages
     supported_languages = speech_recognition.getAvailableLanguages()
 
     if language in supported_languages:
         speech_recognition.setLanguage(language)
         tts.setLanguage(language)
-        print("The language has been changed to" +language) # text need
         tts.say("The language has been changed to" +language)
     else:
-        print("Language" + language + "is not supported.") # text need
         tts.say("Sorry, the language" + language + "is not supported.")
