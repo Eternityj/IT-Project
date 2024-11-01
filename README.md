@@ -7,6 +7,15 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
 
 ## Table of Contents
 - [System Configuration and Installation](#system-configuration-and-installation)
+- [Features](#features)
+  - [Captures images and performs OCR](#captures-images-and-performs-ocr)
+  - [Voice Command Interaction](#voice-command-interaction)
+  - [Language Switching](#language-switching)
+  - [Volume and Speed Management](#volume-and-speed-management)
+  - [Sentiment Analysis and Emotion-Based Modulation](#sentiment-analysis-and-emotion-based-modulation)
+  - [Intelligent Q&A System](#intelligent-q-a-system)
+  - [Music Playback Control](#music-playback-control)
+  - [Text Reading with Emotion Tracking](#text-reading-with-emotion-tracking)
 - [Required Libraries](#required-libraries)
 - [Additional Setup](#additional-setup)
 - [Included Files](#included-files)
@@ -28,6 +37,32 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
 Follow the instructions in **System Configuration and Installation** to set up the environment and install necessary dependencies on either macOS or Windows.
 
 ---
+
+### Features
+
+- **Captures images and performs OCR**  
+  - Uses both NAO robot and laptop’s camera for image capture and OCR processing (`camera_module.py`).
+  
+- **Voice Command Interaction**  
+  - Facilitates interaction with the NAO robot using voice commands (`interactive_module.pyd`, `interactive_module1.py`).
+
+- **Language Switching**  
+  - Switches languages for both speech recognition and text-to-speech (`language_module.py`).
+
+- **Volume and Speed Management**  
+  - Manages the NAO robot’s volume and reading speed for a customized listening experience (`voice_module.py`).
+
+- **Sentiment Analysis and Emotion-Based Modulation**  
+  - Performs sentiment analysis on text and adjusts speech rate and volume based on the detected emotion (`emotion_module.py`).
+
+- **Intelligent Q&A System**  
+  - Answers questions about the text using the GPT API for an interactive Q&A experience (`gpt.py`).
+
+- **Music Playback Control**  
+  - Plays and stops music on the NAO robot, adding an additional layer of engagement (`music.py`).
+
+- **Text Reading with Emotion Tracking**  
+  - Reads text aloud with tracking and emotional modulation for a dynamic and engaging experience (`read_module.py`).
 
 ### Required Libraries
 
