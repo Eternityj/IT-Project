@@ -6,16 +6,21 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
 ---
 
 ## Table of Contents
-1. [System Configuration and Installation](#system-configuration-and-installation)
-2. [Required Libraries](#required-libraries)
-3. [Additional Setup](#additional-setup)
-4. [Included Files](#included-files)
-5. [Key Algorithms](#key-algorithms)
-6. [Changelog](#changelog)
-7. [Detected Bugs](#detected-bugs)
-8. [Test Cases](#test-cases)
-9. [Traceability Matrix](#traceability-matrix)
-
+- [System Configuration and Installation](#system-configuration-and-installation)
+- [Required Libraries](#required-libraries)
+- [Additional Setup](#additional-setup)
+- [Included Files](#included-files)
+  - [Laptop Folder](#laptop-folder)
+  - [Robot Folder](#robot-folder)
+- [Key Algorithms](#key-algorithms)
+  - [Image Capture and Text Recognition](#image-capture-and-text-recognition)
+  - [Interactive Module for Voice-Activated Commands](#interactive-module-for-voice-activated-commands)
+  - [Reading Functionality with Emotional Tone Modulation](#reading-functionality-with-emotional-tone-modulation)
+  - [Sentiment Analysis for Emotion-Based Modulation](#sentiment-analysis-for-emotion-based-modulation)
+- [Changelog](#changelog)
+- [Detected Bugs](#detected-bugs)
+- [Test Cases](#test-cases)
+- [Traceability Matrix](#traceability-matrix)
 ---
 
 ### System Configuration and Installation
