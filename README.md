@@ -13,7 +13,7 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
   - [Language Switching](#language-switching)
   - [Volume and Speed Management](#volume-and-speed-management)
   - [Sentiment Analysis and Emotion-Based Modulation](#sentiment-analysis-and-emotion-based-modulation)
-  - [Intelligent Q&A System](#intelligent-q-a-system)
+  - [Intelligent Q&A System](#intelligent-qa-system)
   - [Music Playback Control](#music-playback-control)
   - [Text Reading with Emotion Tracking](#text-reading-with-emotion-tracking)
 - [Required Libraries](#required-libraries)
@@ -30,6 +30,7 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
 - [Detected Bugs](#detected-bugs)
 - [Test Cases](#test-cases)
 - [Traceability Matrix](#traceability-matrix)
+
 ---
 
 ### System Configuration and Installation
@@ -64,6 +65,7 @@ Follow the instructions in **System Configuration and Installation** to set up t
 - **Text Reading with Emotion Tracking**  
   - Reads text aloud with tracking and emotional modulation for a dynamic and engaging experience (`read_module.py`).
 
+---
 ### Required Libraries
 
 To run the project, install the following Python libraries:
