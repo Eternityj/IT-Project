@@ -27,6 +27,7 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
   - [Reading Functionality with Emotional Tone Modulation](#reading-functionality-with-emotional-tone-modulation)
   - [Sentiment Analysis for Emotion-Based Modulation](#sentiment-analysis-for-emotion-based-modulation)
 - [Database Structure](#database-structure)
+  - [Diagrams](#Diagrams)
 - [Changelog](#changelog)
 - [Detected Bugs](#detected-bugs)
 - [Test Cases](#test-cases)
