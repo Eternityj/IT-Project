@@ -26,6 +26,7 @@ ReadMate assists visually impaired individuals by enabling a NAO robot to read b
   - [Interactive Module for Voice-Activated Commands](#interactive-module-for-voice-activated-commands)
   - [Reading Functionality with Emotional Tone Modulation](#reading-functionality-with-emotional-tone-modulation)
   - [Sentiment Analysis for Emotion-Based Modulation](#sentiment-analysis-for-emotion-based-modulation)
+- [Database Structure](#database-structure)
 - [Changelog](#changelog)
 - [Detected Bugs](#detected-bugs)
 - [Test Cases](#test-cases)
@@ -136,6 +137,31 @@ Leverages the NAOqi SDK to implement voice synthesis on the NAO robot. The `read
 Uses the TextBlob library to evaluate the emotional tone of a text. The `analyze_sentiment` function calculates the polarity and subjectivity scores for input text, which the `emotion_read` function uses to adjust text-to-speech parameters on the NAO robot. Based on the polarity score, it assigns appropriate speech rate and volume levels, enhancing expressiveness in reading. This integration allows the robot to convey emotions more effectively, resulting in a more engaging user experience.
 
 ---
+### Database Structure
+
+This diagram represents the modular structure of a NAO robot designed to assist blind users in reading books. The `NaoRobot` component serves as the central unit, managing core body operations and coordinating interactions across various modules.
+
+- **FlipPageModule**: Controls the robot’s arm to perform mechanical page-turning actions, allowing users to continue reading without manual intervention.
+- **VoiceModule**: Manages the robot’s speech output, including reading text aloud to the user, with options for adjusting volume and speech rate.
+- **InteractiveModule**: Acts as the interface for user interactions, recognizing commands from the user and responding appropriately.
+- **GPTModule**: Provides responses to user queries through natural language processing, leveraging a language model to answer questions in a conversational format.
+
+Supporting the main modules, there are additional specialized components:
+
+- **OCRModule**: Utilizes optical character recognition to extract text from images, enabling the robot to recognize and process printed text on a page.
+- **CameraModule**: Handles the capture of images and video streams through the robot’s camera, supplying visual data for further processing.
+- **ImageProcessing**: Conducts essential image processing tasks such as grayscale conversion and noise reduction, preparing images for accurate text recognition.
+- **EmotionModule**: Generates or detects emotional responses to enhance the interaction, making the robot’s responses more engaging and empathetic.
+- **LanguageModule**: Manages multilingual settings to provide support for different languages, enhancing accessibility for diverse users.
+
+Together, these modules enable the NAO robot to perform as an interactive reading aid, blending mechanical, visual, and linguistic capabilities to create a seamless experience for blind users.
+
+#### Diagrams
+
+- **Flowchart of Modular Structure**: ![flowchart.png](flowchart.png)
+- **Entity Relationship Diagram**: ![ERD.png](ERD.png)
+---
+
 
 ### Changelog
 
